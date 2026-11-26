@@ -1,30 +1,33 @@
 # NTCRS Studio — Official Windows Releases & Installers
 
-**NTCRS Studio** is an all-in-one Windows desktop automation suite for creating 9:16 short-form commerce videos with Meta AI, ChatGPT, ElevenLabs / Edge-TTS Thai neural voiceovers, and kinetic subtitles.
+**NTCRS Studio** is a zero-install Windows desktop automation suite for creating 9:16 short-form commerce videos with Meta AI, ChatGPT, ElevenLabs / Edge-TTS Thai neural voiceovers, bundled Thai kinetic subtitles, and Shopee Affiliate tooling.
 
-👉 **[Download Latest Release (v1.0.5)](https://github.com/Magntcrs/ntcrs-studio-releases/releases/latest)**
+👉 **[Download Latest Release (v1.0.9)](https://github.com/Magntcrs/ntcrs-studio-releases/releases/latest)**
 
 ---
 
-## Latest Version: `v1.0.5`
+## Latest Version: `v1.0.9`
 
-View release page & release notes: **[NTCRS Studio 1.0.5](https://github.com/Magntcrs/ntcrs-studio-releases/releases/tag/v1.0.5)**
+View release page & release notes: **[NTCRS Studio 1.0.9](https://github.com/Magntcrs/ntcrs-studio-releases/releases/tag/v1.0.9)**
 
 | Package | Format | Description |
 | --- | --- | --- |
-| `NTCRS.Studio-1.0.5.exe` | Windows Setup (`.exe`) | **Recommended** per-user Windows installer with desktop shortcut and bundled JRE |
-| `NTCRS.Studio-1.0.5.msi` | Windows Installer (`.msi`) | Standard Windows MSI installation package with bundled JRE |
-| `NTCRS.Studio.1.0.5.Portable.zip` | Portable ZIP (`.zip`) | No installation required — extract and launch `NTCRS Studio.exe` |
+| `NTCRS.Studio-1.0.9.exe` | Windows Setup (`.exe`) | **Recommended** per-user Windows installer with desktop shortcut and full bundled runtime |
+| `NTCRS.Studio-1.0.9.msi` | Windows Installer (`.msi`) | Standard Windows MSI installation package with full bundled runtime |
+| `NTCRS.Studio.1.0.9.Portable.zip` | Portable ZIP (`.zip`) | No installation required — extract and launch `NTCRS Studio.exe` |
 | `checksums-sha256.txt` | Text | SHA-256 checksums for all release artifacts |
 
 ---
 
-## What's New in v1.0.5
+## What's New (`v1.0.6` – `v1.0.9`)
 
-- **Multi-Chat (1–5 Concurrent Lanes)**: Run 1 to 5 in-app browser chats simultaneously with a shared ChatGPT & Meta AI account, persisted stagger delays, uniform single-line status cards, idle-lane memory cleanup, and collapsible subtitle settings.
-- **Video Library Tab**: New `Video Library` workspace tab listing both raw Meta AI clips and finished rendered videos with thumbnails, duration & file-size metadata, category/search filters, Windows Recycle Bin deletion, leftover Temp cleanup (`render-temp`), and 1-click **Send to Studio** editing.
-- **Thai TTS & Subtitle Upgrades**: Improved handling for Thai repetition marks (`ๆ`) between speech synthesis and on-screen captions, selectable Thai font styles & font sizes with live preview, collapsible subtitle customization UI, and shared persisted subtitle profiles across Meta AI Studio and Multi-Chat.
-- **Cleaner Workspace & Posting Packs**: Removed unused legacy queue/trending tabs, standardized English sidebar navigation tabs, and cleaned up exported affiliate posting pack text.
+- **True Zero-Install Out-of-the-Box Packaging (`v1.0.9`)**:
+  - **Bundled Node.js & Playwright Core**: Ships standalone `node.exe` and `playwright-core` inside the app so Shopee Affiliate product collection, gallery picking, and shortlink conversion work on clean PCs without installing Node.js.
+  - **All 5 Thai Subtitle Font Families Bundled**: Includes `LINE Seed Sans TH`, `Kanit ExtraBold`, `Mali`, `Prompt`, and `Mitr` directly in the app for FFmpeg `libass` subtitle rendering and live preview (no manual Windows font installation).
+  - **Bundled BGM, B-Roll & Hardened Paths**: Ships all 6 BGM tracks (`calm`, `chill`, `cinematic`, `happy`, `luxury`, `upbeat`), 3 B-Roll templates, SFX, `ffmpeg`/`ffprobe`, `adb`/`scrcpy`, non-`C:` Edge/Chrome detection, and FFmpeg path escaping for spaces, Thai characters, and apostrophes (`'`).
+- **Fresh-PC Startup & KCEF Reliability (`v1.0.8`)**: Fixed ProGuard bytecode `VerifyError` on fresh Windows machines, added automated JVM `-Xverify:all` release checks, and made embedded Chromium (`KCEF`) startup progress-aware during first-launch downloads.
+- **Editable AI Input Text & Custom `.md` Skill Files (`v1.0.7`)**: Customize prompt templates with `{product}` / `{skill}` placeholders and attach local `.md` / `.markdown` skill files across Meta AI Studio and Multi-Chat (1–5).
+- **Release Integrity & Protection (`v1.0.6`)**: ProGuard bytecode shrinking/obfuscation, build-time JS minification/obfuscation, and encrypted `.enc` skill assets.
 
 ---
 
@@ -32,18 +35,19 @@ View release page & release notes: **[NTCRS Studio 1.0.5](https://github.com/Mag
 
 - **OS**: Windows 10 or Windows 11 (64-bit)
 - **Memory**: 8 GB RAM minimum (**16 GB+ RAM recommended** when running 3–5 Multi-Chat lanes concurrently)
-- **Disk Space**: ~2 GB free space recommended for the application, browser runtime cache, and video projects
-- **Network**: Internet connection required (first startup downloads/initializes the embedded Chromium runtime if not already cached)
-- **Zero External Runtime Dependencies**: Includes a bundled Java runtime, built-in Chromium browser (`KCEF`), and native zero-Python Edge-TTS support — no separate Java, Python, or Chrome extension installation is required.
+- **Disk Space**: ~2.5 GB free space recommended for the application, KCEF Chromium cache, and video projects
+- **Browser**: Built-in **Microsoft Edge** (included with Windows) or **Google Chrome** (used by Playwright Shopee Affiliate helpers)
+- **Network**: Internet connection required (first startup automatically downloads the embedded `KCEF` Chromium runtime if not already cached)
+- **Zero Manual Runtime Setup**: Includes bundled Java 21 JRE, Visual C++ DLLs, standalone `node.exe` + `playwright-core`, `ffmpeg`/`ffprobe`, 5 Thai subtitle fonts, `adb`/`scrcpy`, SFX/BGM/B-Roll, and native zero-Python Edge-TTS support — no separate Java, Python, Node.js, FFmpeg, VC++, or font installation required.
 
 ---
 
 ## Quick Start
 
-1. Download **`NTCRS.Studio-1.0.5.exe`** (or extract **`NTCRS.Studio.1.0.5.Portable.zip`**) from the [v1.0.5 release page](https://github.com/Magntcrs/ntcrs-studio-releases/releases/tag/v1.0.5).
-2. Run the installer or launch `NTCRS Studio.exe`.
-3. Open **Meta AI Studio** and sign in once to ChatGPT and Meta AI inside the built-in browser.
-4. *(Optional)* Open **Settings** to configure your ElevenLabs API key, preferred Thai voice, and AI provider credentials.
+1. Download **`NTCRS.Studio-1.0.9.exe`** (or extract **`NTCRS.Studio.1.0.9.Portable.zip`**) from the [v1.0.9 release page](https://github.com/Magntcrs/ntcrs-studio-releases/releases/tag/v1.0.9).
+2. Run the installer or launch `NTCRS Studio.exe` (first launch will initialize/cache embedded Chromium automatically).
+3. Open **Meta AI Studio** and sign in once to ChatGPT / Gemini and Meta AI inside the built-in browser.
+4. *(Optional)* Open **Settings** to configure your ElevenLabs API key, preferred Thai voice, and verify runtime status.
 5. Select products or enter a topic in **Meta AI Studio** or **Multi-Chat (1-5)** to generate, dub, subtitle, and organize clips in **Video Library**.
 
 ---
@@ -53,15 +57,15 @@ View release page & release notes: **[NTCRS Studio 1.0.5](https://github.com/Mag
 After downloading, you can verify checksums in Windows PowerShell against `checksums-sha256.txt`:
 
 ```powershell
-Get-FileHash ".\NTCRS.Studio-1.0.5.exe" -Algorithm SHA256
+Get-FileHash ".\NTCRS.Studio-1.0.9.exe" -Algorithm SHA256
 ```
 
 ---
 
 ## Upgrading from Previous Versions
 
-- Installing a newer `.exe` or `.msi` release (or extracting a newer portable archive) upgrades the app while preserving your local settings database and media library.
-- NTCRS Studio also checks this repository for new version notifications automatically on startup.
+- Installing a newer `.exe` or `.msi` release (or extracting a newer portable archive) upgrades the app while preserving your local settings database (`%LOCALAPPDATA%\NTCRS Studio\ntcrs`) and media library.
+- NTCRS Studio checks this repository for new version notifications automatically on startup.
 
 ---
 
